@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="../../../Backend/etc/system_file.xsd">
+    <system>
+        <tab id="magetrix" translate="label" sortOrder="99999">
+            <label>Magetrix</label>
+        </tab>
+        <section id="magetrix" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>SMTP Settings</label>
+            <tab>magetrix</tab>
+            <resource>Magetrix_Smtp::config</resource>
+            <group id="smtp" translate="label" type="url" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="host" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>SMTP Host</label>
+                    <attribute type="shared">1</attribute>
+                </field>
+                <field id="auth" translate="label" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Authentication Type</label>
+                    <attribute type="shared">1</attribute>
+                </field>
+                <field id="ssl" translate="label" type="text" sortOrder="16" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>SSL</label>
+                    <attribute type="shared">1</attribute>
+                </field>
+                <field id="port" translate="label" type="text" sortOrder="21" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Port</label>
+                    <attribute type="shared">1</attribute>
+                </field>
+                <field id="username" translate="label" type="text" sortOrder="26" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>User Name</label>
+                    <attribute type="shared">1</attribute>
+                </field>
+                <field id="password" translate="label" type="obscure" sortOrder="31" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Password</label>
+                    <attribute type="shared">1</attribute>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
