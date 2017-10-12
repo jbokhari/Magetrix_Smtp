@@ -17,7 +17,7 @@ class Transport extends \Zend_Mail_Transport_Smtp implements \Magento\Framework\
  
     /**
      * @param MessageInterface $message
-     * @param \Magetrix\Smtp\Help`er\SmtpConfig $helper
+     * @param \Magetrix\Smtp\Helper\SmtpConfig $helper
      * @param null $parameters
      * @throws \InvalidArgumentException
      */
@@ -36,14 +36,14 @@ class Transport extends \Zend_Mail_Transport_Smtp implements \Magento\Framework\
 
         $this->_message = $message;
 
-        $smtpHost= $this->_helper->getHost(); //your smtp host  ';
+        $smtpHost= $this->_helper->getHost(); //your smtp host
 
         $smtpConf = [
-            'auth' => $this->_helper->getAuth(),//auth type
+            'auth' => $this->_helper->getAuth(), //auth type
             'ssl' => $this->_helper->getSsl(), 
             'port' => $this->_helper->getPort(),
-            'username' => $this->_helper->getUsername(),//smtm user name
-            'password' => $this->_helper->getPassword()//smtppassword 
+            'username' => $this->_helper->getUsername(), //smtm user name
+            'password' => $this->_helper->getPassword() //smtppassword 
         ];
 
         parent::__construct($smtpHost, $smtpConf);
