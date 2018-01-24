@@ -63,4 +63,10 @@ class Transport extends \Zend_Mail_Transport_Smtp implements \Magento\Framework\
             throw new \Magento\Framework\Exception\MailException(new \Magento\Framework\Phrase($e->getMessage()), $e);
         }
     }
+
+    public function getMessage(){
+        if ( isset($this->_message ) ){
+            return $this->_message;
+        }
+    } 
 }
